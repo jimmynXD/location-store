@@ -36,8 +36,17 @@ async function createRestaurant(req: NextApiRequest, res: NextApiResponse) {
   try {
     const newEntry: RestaurantStore = await prisma.restaurantStore.create({
       data: {
-        restaurantName: body.restaurantName,
-        note: body.note,
+        place_id: body.place_id ?? '',
+        name: body.name ?? '',
+        business_status: body.business_status ?? '',
+        formatted_address: body.formatted_address ?? '',
+        price_level: body.price_level ?? null,
+        website: body.website ?? null,
+        google_map_url: body.google_map_url ?? null,
+        rating: body.rating ?? null,
+        user_ratings_total: body.user_ratings_total ?? null,
+        lat: body.location?.lat() ?? null,
+        lng: body.location?.lng() ?? null,
       },
     })
     return res.status(200).json({ data: newEntry, success: true })

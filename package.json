@@ -1,5 +1,14 @@
 {
-  "name": "dsm-local-monorepo",
+  "name": "munch-xd-monorepo",
+  "author": {
+    "name": "labXD",
+    "email": "engineering@labxd.com",
+    "url": "https://labxd.com"
+  },
+  "contributors": [
+    "Jimmy Nguyen <jimmy@labxd.com> (https://github.com/jimmynxd)",
+    "Walee Ahmed <walee@labxd.com> (https://github.com/wallexd)"
+  ],
   "private": true,
   "scripts": {
     "bootstrap": "pnpm install && husky install",
@@ -41,5 +50,9 @@
     ]
   },
   "packageManager": "pnpm@8.3.1",
-  "prettier": "prettier-config-local"
+  "prettier": "prettier-config-local",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/labXD/munchXD.git"
+  }
 }

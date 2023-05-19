@@ -1,0 +1,22 @@
+{
+  "business_status": "OPERATIONAL",
+  "formatted_address": "68 Greenpoint Ave, Brooklyn, NY 11222, USA",
+  "geometry": {
+    "location": {
+      "lat": 40.7296511,
+      "lng": -73.9582848
+    },
+    "viewport": {
+      "south": 40.7283836197085,
+      "west": -73.9596430802915,
+      "north": 40.7310815802915,
+      "east": -73.95694511970848
+    }
+  },
+  "name": "Di An Di",
+  "price_level": 2,
+  "rating": 4.4,
+  "user_ratings_total": 657,
+  "website": "https://www.diandi.nyc/",
+  "html_attributions": []
+}

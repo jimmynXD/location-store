@@ -1,11 +1,8 @@
-import {
-  Autocomplete,
-  GoogleMap,
-  Marker,
-  useLoadScript,
-} from '@react-google-maps/api'
+import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api'
 import { useMemo, useState } from 'react'
 import { PlacesAutocomplete } from '../components'
+import clsx from 'clsx'
+import Link from 'next/link'
 
 export function MapPage() {
   const { isLoaded } = useLoadScript({
@@ -25,7 +22,27 @@ export function MapPage() {
   }
   return (
     <div className="h-screen relative">
-      <PlacesAutocomplete setSelected={setSelected} />
+      <div
+        className={clsx(
+          'fixed top-2 left-2 right-2 z-10',
+          'lg:w-full lg:max-w-[400px]'
+        )}
+      >
+        <PlacesAutocomplete setSelected={setSelected} />
+        <div className="absolute -bottom-2 lg:bottom-[unset] translate-y-full lg:translate-y-0 lg:-right-2 lg:top-0 lg:translate-x-full">
+          <Link
+            href="/"
+            className={clsx(
+              'transition-all h-12',
+              'flex items-center px-4 rounded-sm text-lg',
+              'bg-white shadow',
+              'hover:bg-gray-100'
+            )}
+          >
+            <span>My List</span>
+          </Link>
+        </div>
+      </div>
       <GoogleMap
         options={options}
         mapContainerClassName="w-full h-full"

@@ -3,7 +3,6 @@
 //“Referential integrity is a property of a data set that states that all its references are valid. Referential integrity requires that if one record references another, then the referenced record must exist.
 generator client {
   provider = "prisma-client-js"
-//   previewFeatures = ["referentialIntegrity"]
 }
 
 datasource db {
@@ -11,9 +10,47 @@ datasource db {
   url = env("DATABASE_URL")
   relationMode = "prisma"
 }
-
+//   address_components?: google.maps.GeocoderAddressComponent[];
+//   adr_address?: string;
+//   aspects?: google.maps.places.PlaceAspectRating[];
+//   business_status?: google.maps.places.BusinessStatus;
+//   formatted_address?: string;
+//   formatted_phone_number?: string;
+//   geometry?: google.maps.places.PlaceGeometry;
+//   html_attributions?: string[];
+//   icon?: string;
+//   icon_background_color?: string;
+//   icon_mask_base_uri?: string;
+//   international_phone_number?: string;
+//   name?: string;
+//   opening_hours?: google.maps.places.PlaceOpeningHours;
+//   permanently_closed?: boolean;
+//   photos?: google.maps.places.PlacePhoto[];
+//   plus_code?: google.maps.places.PlacePlusCode;
+//   price_level?: number;
+//   rating?: number;
+//   reviews?: google.maps.places.PlaceReview[];
+//   types?: string[];
+//   url?: string;
+//   user_ratings_total?: number;
+//   utc_offset?: number;
+//   utc_offset_minutes?: number;
+//   vicinity?: string;
+//   website?: string;
 model RestaurantStore {
-id      Int   @default(autoincrement()) @id
-restaurantName    String
-note String?
+id Int   @default(autoincrement()) @id
+place_id String
+name    String
+business_status String?
+formatted_address String
+price_level Int?
+website String?
+rating  Float?
+user_ratings_total Int?
+google_map_url String?
+lat Float?
+lng Float?
+visited Boolean @default(false)
+createdAt DateTime @default(now())
+updatedAt DateTime @updatedAt
 }

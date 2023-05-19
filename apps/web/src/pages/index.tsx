@@ -1,1 +1,1 @@
-export { MapPage as default } from '@/map'
+export { MyList as default } from '@/user'

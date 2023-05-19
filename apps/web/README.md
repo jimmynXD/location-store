@@ -19,12 +19,12 @@
 
 - login `pscale auth login`
 - run db locally `pnpm run db`
-- create a branch `pscale branch create food-alert-api <BRANCH_NAME>`
+- create a branch `pscale branch create munch-api <BRANCH_NAME>`
 - sync prisma.schema with PlanetScale schema via `pnpm run sync:schema`
-- To verify that the database is in sync with the prisma schema, run mysql playground via `pscale shell food-alert-api dev`
+- To verify that the database is in sync with the prisma schema, run mysql playground via `pscale shell munch-api dev`
   - Then run `describe <MODAL_NAME>;`
   - run `exit` to leave
-- To promote a branch to production once in sync, run `pscale branch promote food-alert-api main`
+- To promote a branch to production once in sync, run `pscale branch promote munch-api main`
 
 ## reference
 
